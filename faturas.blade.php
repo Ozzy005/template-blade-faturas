@@ -38,6 +38,10 @@
             display: grid;
         }
 
+        .text-center {
+            text-align: center;
+        }
+
         /* START BORDER */
         .b-1 {
             border: 1px solid black;
@@ -264,28 +268,28 @@
     <div class="faturas grid b-1 mb-3">
         <div class="l1 grid bb-1">
             <div class="l1-c1 grid br-1">
-                <div class="flex center">
+                <div class="flex center text-center">
                     <img src="{{!empty($invoicing->company->image)
                     ? asset("storage/{$invoicing->company->image}")
                     : asset('img/noimage.png')}}" class="img">
                 </div>
                 @if (!empty($invoicing->company->name))
                 <div class="flex center">
-                    <b class="w-80 flex center">
+                    <b class="w-95 text-center flex center">
                         {{ $invoicing->company->name }}
                     </b>
                 </div>
                 @endif
                 @if (!empty($invoicing->company->address))
                 <div class="flex center">
-                    <span class="w-80 flex center">
+                    <span class="w-95 text-center flex center">
                         {{ $invoicing->company->address }}
                     </span>
                 </div>
                 @endif
                 @if (!empty($invoicing->company->district))
                 <div class="flex center">
-                    <span class="w-80 flex center">
+                    <span class="w-95 text-center flex center">
                         {{ $invoicing->company->district }},
                         {{ $invoicing->company->number ?? 'S/N'}}
                     </span>
@@ -293,7 +297,7 @@
                 @endif
                 @if (!empty($invoicing->company->zip_code))
                 <div class="flex center">
-                    <span class="w-80 flex center">
+                    <span class="w-95 text-center flex center">
                         <span class="mr-1">CEP:</span>
                         {{ $invoicing->company->zip_code }},
                         {{ $invoicing->company->city ?? '' }}
